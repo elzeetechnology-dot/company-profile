@@ -16,7 +16,7 @@ const mobilePortfolio = ref(false)
     >
       <div
         class="max-w-7xl mx-auto px-2 py-5
-               flex items-center justify-between"
+               flex items-center justify-between flex-wrap"
       >
         <!-- BRAND -->
         <NuxtLink
@@ -121,7 +121,8 @@ const mobilePortfolio = ref(false)
         </nav>
 <!-- HAMBURGER BUTTON (MOBILE ONLY) -->
 <button
-  class="md:hidden flex flex-col justify-center gap-1"
+  class="md:hidden flex flex-col justify-center gap-1
+          ml-auto z-50"
   @click="mobileOpen = !mobileOpen"
   aria-label="Open menu"
 >
