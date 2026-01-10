@@ -42,14 +42,7 @@ const closeMobileMenu = () => {
 
         <!-- DESKTOP MENU -->
         <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-          <NuxtLink
-  to="/"
-  class="mobile-link"
-  @click="closeMobileMenu"
->
-  Home
-</NuxtLink>
-
+          <NuxtLink to="/" class="nav-link">Home</NuxtLink>
 
           <!-- SERVICES -->
           <div class="relative group">
@@ -66,96 +59,26 @@ const closeMobileMenu = () => {
             </div>
           </div>
 
-          <NuxtLink
-  to="/pricing"
-  class="mobile-link"
-  @click="closeMobileMenu"
->
-  Pricing
-</NuxtLink>
-
+          <NuxtLink to="/pricing" class="nav-link">Pricing</NuxtLink>
 
           <!-- PORTFOLIO -->
-<div class="relative group">
-  <button
-    class="nav-link flex items-center gap-1"
-    aria-haspopup="true"
-    aria-expanded="false"
-  >
-    Portfolio
-    <span
-      class="text-xs transition-transform duration-300
-             group-hover:rotate-180"
-    >
-      ▾
-    </span>
-  </button>
+          <div class="relative group">
+            <button class="nav-link flex items-center gap-1">
+              Portfolio <span class="text-xs">▾</span>
+            </button>
+            <div class="dropdown-panel">
+              <NuxtLink to="/portfolio" class="dropdown-link">Portfolio</NuxtLink>
+              <NuxtLink to="/project-details/Admin" class="dropdown-link">Admin App</NuxtLink>
+              <NuxtLink to="/project-details/Akademik" class="dropdown-link">Academy App</NuxtLink>
+              <NuxtLink to="/project-details/Book-app" class="dropdown-link">Book App</NuxtLink>
+              <NuxtLink to="/project-details/Company-profile" class="dropdown-link">Web App</NuxtLink>
+              <NuxtLink to="/project-details/SM-Spbu" class="dropdown-link">SPBU App</NuxtLink>
+              <NuxtLink to="/project-details/UMKM" class="dropdown-link">UMKM App</NuxtLink>
+            </div>
+          </div>
 
-  <div
-    class="absolute left-0 mt-4 w-72 rounded-2xl
-           bg-white shadow-2xl border border-black/5
-           opacity-0 invisible
-           group-hover:opacity-100 group-hover:visible
-           translate-y-3 group-hover:translate-y-0
-           transition-all duration-300 ease-out"
-  >
-    <ul class="py-3 text-sm">
-      <li>
-        <NuxtLink to="/portfolio" class="dropdown-link">
-          Portfolio
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/project-details/Admin" class="dropdown-link">
-          Admin App
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/project-details/Akademik" class="dropdown-link">
-          Academy App
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/project-details/Book-app" class="dropdown-link">
-          Book App
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/project-details/Company-profile" class="dropdown-link">
-          Web App
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/project-details/SM-Spbu" class="dropdown-link">
-          SPBU App
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/project-details/UMKM" class="dropdown-link">
-          UMKM App
-        </NuxtLink>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
-          <NuxtLink
-  to="/about"
-  class="mobile-link"
-  @click="closeMobileMenu"
->
-  About
-</NuxtLink>
-
-          <NuxtLink
-  to="/contact"
-  class="mobile-link"
-  @click="closeMobileMenu"
->
-  Contact
-</NuxtLink>
-
+          <NuxtLink to="/about" class="nav-link">About</NuxtLink>
+          <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
 
           <NuxtLink
             to="/contact"
@@ -183,7 +106,14 @@ const closeMobileMenu = () => {
           class="md:hidden border-t border-black/10 bg-[#F6F3EE]"
         >
           <nav class="px-6 py-6 space-y-4 text-sm font-medium">
-            <NuxtLink to="/" class="mobile-link">Home</NuxtLink>
+            <NuxtLink
+  to="/"
+  class="mobile-link"
+  @click="mobileOpen = false"
+>
+  Home
+</NuxtLink>
+
 
             <!-- SERVICES -->
 <button
@@ -218,8 +148,14 @@ const closeMobileMenu = () => {
 </div>
 
 
+            <NuxtLink
+  to="/pricing"
+  class="mobile-link"
+  @click="mobileOpen = false"
+>
+  Pricing
+</NuxtLink>
 
-            <NuxtLink to="/pricing" class="mobile-link">Pricing</NuxtLink>
 
             <!-- PORTFOLIO -->
 <button
@@ -256,17 +192,30 @@ const closeMobileMenu = () => {
   </NuxtLink>
 </div>
 
-
-
-            <NuxtLink to="/about" class="mobile-link">About</NuxtLink>
-            <NuxtLink to="/contact" class="mobile-link">Contact</NuxtLink>
+            <NuxtLink
+  to="/about"
+  class="mobile-link"
+  @click="mobileOpen = false"
+>
+  About
+</NuxtLink>
 
             <NuxtLink
-              to="/contact"
-              class="block mt-4 text-center bg-black text-white py-3 rounded-xl"
-            >
-              Consultation
-            </NuxtLink>
+  to="/contact"
+  class="mobile-link"
+  @click="mobileOpen = false"
+>
+  Contact
+</NuxtLink>
+
+            <NuxtLink
+  to="/contact"
+  class="block mt-4 text-center bg-black text-white py-3 rounded-xl"
+  @click="closeMobileMenu"
+>
+  Consultation
+</NuxtLink>
+
           </nav>
         </div>
       </transition>
