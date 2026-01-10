@@ -1,145 +1,110 @@
 <template>
   <!-- HERO -->
-  <section class="relative bg-gradient-to-br from-gray-900 to-black text-white">
-    <div class="max-w-7xl mx-auto px-6 py-28 text-center">
-      <span class="inline-block mb-4 text-sm tracking-wide text-gray-300 uppercase">
-        Layanan Kami
+  <section class="bg-gradient-to-br from-gray-900 to-black text-white">
+    <div class="max-w-6xl mx-auto px-6 py-28 text-center">
+      <span
+        class="inline-block mb-4 px-4 py-1 text-sm
+               text-gray-300 border border-white/20 rounded-full"
+      >
+        Project Details
       </span>
 
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Website Company Profile <br class="hidden md:block" />
-        yang Profesional & Kredibel
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Book App / Booking System
       </h1>
 
-      <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-10">
-        Kami membantu bisnis membangun identitas digital yang kuat melalui
-        website company profile modern, cepat, dan siap berkembang.
+      <p class="text-gray-300 max-w-2xl mx-auto text-lg">
+        Aplikasi booking berbasis web untuk mempermudah
+        pelanggan melakukan reservasi layanan secara online,
+        cepat, dan terorganisir.
       </p>
-
-      <div class="flex justify-center gap-4">
-        <NuxtLink
-          to="/contact"
-          class="bg-white text-black px-7 py-3 rounded-xl font-semibold
-                 hover:bg-gray-200 transition"
-        >
-          Konsultasi Gratis
-        </NuxtLink>
-
-        <NuxtLink
-          to="/portfolio"
-          class="border border-white/30 px-7 py-3 rounded-xl
-                 hover:bg-white hover:text-black transition"
-        >
-          Lihat Portfolio
-        </NuxtLink>
-      </div>
     </div>
   </section>
 
   <!-- OVERVIEW -->
-  <section class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-start">
-    <!-- Left -->
+  <section class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16">
+    <!-- LEFT -->
     <div>
       <h2 class="text-2xl font-semibold mb-4">
-        Apa yang Kami Kerjakan?
+        Tentang Project
       </h2>
 
-      <p class="text-gray-600 mb-6 leading-relaxed">
-        Website company profile bukan hanya sekadar tampilan,
-        tetapi representasi profesional dari brand Anda.
-        Kami merancang website yang fokus pada kejelasan informasi,
-        kredibilitas, dan pengalaman pengguna.
+      <p class="text-gray-600 mb-6">
+        Book App dirancang untuk bisnis berbasis layanan seperti
+        klinik, salon, bengkel, konsultasi, atau jasa profesional
+        agar proses pemesanan tidak lagi manual.
       </p>
 
       <ul class="space-y-3 text-gray-600 list-disc list-inside">
-        <li>Desain modern & mobile-friendly</li>
-        <li>Struktur halaman rapi dan mudah dipahami</li>
-        <li>Optimasi SEO dasar</li>
-        <li>Performa cepat & ringan</li>
-        <li>Siap dikembangkan ke fitur lanjutan</li>
+        <li>Booking layanan secara online</li>
+        <li>Manajemen jadwal & ketersediaan</li>
+        <li>Notifikasi otomatis (email / WhatsApp)</li>
+        <li>Dashboard admin & laporan</li>
+        <li>Manajemen pelanggan</li>
       </ul>
     </div>
 
-    <!-- Right -->
-    <div class="bg-white rounded-2xl shadow-sm p-10">
-      <h3 class="text-xl font-semibold mb-6">
-        Fitur Standar
+    <!-- RIGHT -->
+    <div class="bg-white rounded-2xl shadow-lg p-10">
+      <h3 class="text-xl font-semibold mb-4">
+        Teknologi & Fitur
       </h3>
 
-      <div class="grid grid-cols-2 gap-4 text-sm text-gray-600">
-        <div class="flex gap-2">✅ Home & Landing Page</div>
-        <div class="flex gap-2">✅ About Company</div>
-        <div class="flex gap-2">✅ Services Page</div>
-        <div class="flex gap-2">✅ Portfolio / Project</div>
-        <div class="flex gap-2">✅ Contact & Form</div>
-        <div class="flex gap-2">✅ WhatsApp Integration</div>
-        <div class="flex gap-2">✅ Google Maps</div>
-        <div class="flex gap-2">✅ SEO Friendly</div>
-      </div>
+      <ul class="space-y-4 text-gray-600 mb-6">
+        <li>• Frontend modern & responsif</li>
+        <li>• Sistem login & role</li>
+        <li>• Kalender & time-slot booking</li>
+        <li>• Database terintegrasi</li>
+        <li>• Siap dikembangkan ke mobile app</li>
+      </ul>
 
-      <NuxtLink
-        to="/contact"
-        class="inline-block mt-10 bg-black text-white px-6 py-3
-               rounded-xl hover:bg-gray-800 transition font-semibold"
-      >
-        Konsultasi Website
-      </NuxtLink>
+      <div class="flex flex-col gap-4">
+        <NuxtLink
+          to="/portfolio"
+          class="inline-block text-center px-6 py-3 rounded-xl
+                 border text-gray-700 hover:bg-gray-100 transition"
+        >
+          ← Kembali ke Portfolio
+        </NuxtLink>
+
+        <NuxtLink
+          to="/contact"
+          class="inline-block text-center px-6 py-3 rounded-xl
+                 bg-black text-white hover:bg-gray-800 transition font-semibold"
+        >
+          Konsultasi Booking App
+        </NuxtLink>
+      </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
+  <!-- STATUS -->
   <section class="bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6 py-24">
-      <h2 class="text-2xl font-semibold text-center mb-14">
-        Proses Pengerjaan
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
+      <div class="text-4xl mb-4">🚧</div>
+
+      <h2 class="text-2xl font-semibold mb-4">
+        Status Pengembangan
       </h2>
 
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
-          <div class="text-2xl mb-3">📋</div>
-          <h4 class="font-semibold mb-2">Analisis</h4>
-          <p class="text-sm text-gray-600">
-            Diskusi kebutuhan & tujuan bisnis Anda
-          </p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
-          <div class="text-2xl mb-3">🎨</div>
-          <h4 class="font-semibold mb-2">Desain</h4>
-          <p class="text-sm text-gray-600">
-            Desain UI/UX yang modern & relevan
-          </p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
-          <div class="text-2xl mb-3">💻</div>
-          <h4 class="font-semibold mb-2">Development</h4>
-          <p class="text-sm text-gray-600">
-            Implementasi teknis & optimasi performa
-          </p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
-          <div class="text-2xl mb-3">🚀</div>
-          <h4 class="font-semibold mb-2">Launch</h4>
-          <p class="text-sm text-gray-600">
-            Website siap online & digunakan
-          </p>
-        </div>
-      </div>
+      <p class="text-gray-600 max-w-xl mx-auto">
+        Project Book App masih dalam tahap pengembangan.
+        Detail fitur lanjutan, demo, dan studi kasus akan
+        ditampilkan setelah versi stabil dirilis.
+      </p>
     </div>
   </section>
 
-  <!-- CTA BOTTOM -->
+  <!-- CTA -->
   <section class="bg-black text-white">
-    <div class="max-w-7xl mx-auto px-6 py-24 text-center">
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
       <h2 class="text-3xl font-bold mb-4">
-        Siap Membangun Website Company Profile?
+        Ingin Sistem Booking untuk Bisnis Anda?
       </h2>
 
       <p class="text-gray-300 max-w-xl mx-auto mb-8">
-        Diskusikan kebutuhan website bisnis Anda bersama tim kami
-        dan dapatkan solusi terbaik.
+        Kami siap membangun sistem booking yang efisien,
+        aman, dan sesuai alur bisnis Anda.
       </p>
 
       <NuxtLink
@@ -147,7 +112,7 @@
         class="inline-block bg-white text-black px-8 py-4
                rounded-xl font-semibold hover:bg-gray-200 transition"
       >
-        Konsultasi Sekarang
+        Diskusi Sekarang
       </NuxtLink>
     </div>
   </section>

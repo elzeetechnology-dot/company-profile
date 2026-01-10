@@ -3,7 +3,8 @@
   <section class="bg-gradient-to-b from-gray-50 to-white">
     <div class="max-w-7xl mx-auto px-6 py-24 text-center">
       <span
-        class="inline-block mb-4 px-4 py-1 text-sm font-medium text-blue-600 bg-blue-50 rounded-full"
+        class="inline-block mb-4 px-4 py-1 text-sm font-medium
+               text-blue-600 bg-blue-50 rounded-full"
       >
         Portfolio
       </span>
@@ -22,15 +23,17 @@
   <!-- PORTFOLIO GRID -->
   <section class="max-w-7xl mx-auto px-6 py-20">
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-      <article
+      <NuxtLink
         v-for="item in portfolios"
         :key="item.title"
+        :to="item.link"
         class="group rounded-2xl overflow-hidden bg-white border
                hover:shadow-2xl transition duration-300"
       >
         <!-- IMAGE -->
         <div
-          class="relative h-52 bg-gradient-to-br from-gray-200 to-gray-300
+          class="relative h-52 bg-gradient-to-br
+                 from-gray-200 to-gray-300
                  flex items-center justify-center"
         >
           <span class="text-gray-500 text-sm">
@@ -40,10 +43,11 @@
           <!-- Overlay -->
           <div
             class="absolute inset-0 bg-black/60 opacity-0
-                   group-hover:opacity-100 transition flex items-center justify-center"
+                   group-hover:opacity-100 transition
+                   flex items-center justify-center"
           >
-            <span class="text-white font-semibold text-sm tracking-wide">
-              View Project
+            <span class="text-white font-semibold tracking-wide">
+              View Project →
             </span>
           </div>
         </div>
@@ -58,28 +62,18 @@
             {{ item.description }}
           </p>
 
-          <div class="flex flex-wrap gap-2 mb-5">
+          <div class="flex flex-wrap gap-2">
             <span
               v-for="tech in item.tech"
               :key="tech"
-              class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
+              class="text-xs bg-gray-100
+                     text-gray-700 px-3 py-1 rounded-full"
             >
               {{ tech }}
             </span>
           </div>
-
-          <NuxtLink
-            to="/contact"
-            class="inline-flex items-center text-sm font-semibold
-                   text-blue-600 hover:text-blue-700 transition"
-          >
-            Konsultasi Project
-            <span class="ml-1 group-hover:translate-x-1 transition">
-              →
-            </span>
-          </NuxtLink>
         </div>
-      </article>
+      </NuxtLink>
     </div>
   </section>
 
@@ -89,6 +83,7 @@
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
         Punya Ide Project?
       </h2>
+
       <p class="text-gray-400 max-w-xl mx-auto mb-8">
         Diskusikan kebutuhan Anda bersama tim kami
         dan wujudkan solusi digital terbaik.
@@ -96,8 +91,9 @@
 
       <NuxtLink
         to="/contact"
-        class="inline-block bg-blue-600 px-8 py-4 rounded-xl
-               font-semibold hover:bg-blue-700 transition"
+        class="inline-block bg-blue-600 px-8 py-4
+               rounded-xl font-semibold
+               hover:bg-blue-700 transition"
       >
         Konsultasi Gratis
       </NuxtLink>
@@ -112,36 +108,42 @@ const portfolios = [
     description:
       'Aplikasi web untuk monitoring stok, penjualan, dan laporan harian SPBU.',
     tech: ['Vue', 'Laravel', 'MySQL'],
+    link: '/project-details/SM-Spbu',
   },
   {
     title: 'Website Company Profile',
     description:
       'Website profesional untuk meningkatkan branding dan kepercayaan perusahaan.',
     tech: ['Nuxt', 'Tailwind CSS'],
+    link: '/project-details/Company-profile',
   },
   {
     title: 'Aplikasi Kasir UMKM',
     description:
       'Aplikasi kasir berbasis web untuk membantu pencatatan transaksi UMKM.',
     tech: ['Vue', 'Firebase'],
+    link: '/project-details/UMKM',
   },
   {
     title: 'Sistem Akademik Sekolah',
     description:
       'Pengelolaan data siswa, guru, nilai, dan laporan akademik.',
     tech: ['Laravel', 'Bootstrap'],
+    link: '/project-details/Akademik',
   },
   {
-    title: 'Dashboard Admin Startup',
+    title: 'Dashboard Admin',
     description:
-      'Dashboard analytics dan manajemen user untuk kebutuhan startup.',
+      'Dashboard admin untuk manajemen data dan monitoring sistem.',
     tech: ['Nuxt', 'API', 'Tailwind'],
+    link: '/project-details/Admin',
   },
   {
     title: 'Aplikasi Booking Online',
     description:
       'Sistem booking layanan online dengan notifikasi dan manajemen jadwal.',
     tech: ['Vue', 'Node.js'],
+    link: '/project-details/Book-app',
   },
 ]
 </script>

@@ -110,6 +110,96 @@
             Consultation
           </NuxtLink>
         </nav>
+
+        <!-- MOBILE MENU BAR (SELALU TERLIHAT) -->
+<nav
+  class="md:hidden w-full mt-4
+         flex flex-wrap gap-3
+         text-xs font-medium justify-center"
+>
+  <NuxtLink to="/" class="nav-link">Home</NuxtLink>
+
+          <!-- SERVICES DROPDOWN -->
+          <div class="relative group">
+            <button class="nav-link flex items-center gap-1">
+              Services
+              <span
+                class="text-xs transition-transform duration-300
+                       group-hover:rotate-180"
+              >
+                ▾
+              </span>
+            </button>
+
+            <div
+              class="absolute left-0 mt-4 w-72 rounded-2xl
+                     bg-white shadow-2xl border border-black/5
+                     opacity-0 invisible
+                     group-hover:opacity-100 group-hover:visible
+                     translate-y-3 group-hover:translate-y-0
+                     transition-all duration-300 ease-out"
+            >
+              <ul class="py-3 text-sm">
+                <li><NuxtLink to="/services" class="dropdown-link">Services</NuxtLink></li>
+                <li><NuxtLink to="/service-details/company-profile" class="dropdown-link">Company Profile</NuxtLink></li>
+                <li><NuxtLink to="/service-details/web-application" class="dropdown-link">Web Application</NuxtLink></li>
+                <li><NuxtLink to="/service-details/mobile-application" class="dropdown-link">Mobile Application</NuxtLink></li>
+                <li><NuxtLink to="/service-details/uiux-design" class="dropdown-link">UI / UX Design</NuxtLink></li>
+                <li><NuxtLink to="/service-details/maintenance-support" class="dropdown-link">Maintenance & Support</NuxtLink></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ✅ PRICING -->
+          <NuxtLink to="/pricing" class="nav-link">
+            Pricing
+          </NuxtLink>
+
+          <!-- PORTFOLIO DROPDOWN -->
+          <div class="relative group">
+            <button class="nav-link flex items-center gap-1">
+              Portfolio
+              <span
+                class="text-xs transition-transform duration-300
+                       group-hover:rotate-180"
+              >
+                ▾
+              </span>
+            </button>
+
+            <div
+              class="absolute left-0 mt-4 w-72 rounded-2xl
+                     bg-white shadow-2xl border border-black/5
+                     opacity-0 invisible
+                     group-hover:opacity-100 group-hover:visible
+                     translate-y-3 group-hover:translate-y-0
+                     transition-all duration-300 ease-out"
+            >
+              <ul class="py-3 text-sm">
+                <li><NuxtLink to="/portfolio" class="dropdown-link">Portfolio</NuxtLink></li>
+                <li><NuxtLink to="/project-details/Admin" class="dropdown-link">Admin App</NuxtLink></li>
+                <li><NuxtLink to="/project-details/Akademik" class="dropdown-link">Academy App</NuxtLink></li>
+                <li><NuxtLink to="/project-details/Book-app" class="dropdown-link">Book App</NuxtLink></li>
+                <li><NuxtLink to="/project-details/Company-profile" class="dropdown-link">Web App</NuxtLink></li>
+                <li><NuxtLink to="/project-details/SM-Spbu" class="dropdown-link">SPBU App</NuxtLink></li>
+                <li><NuxtLink to="/project-details/UMKM" class="dropdown-link">UMKM App</NuxtLink></li>
+              </ul>
+            </div>
+          </div>
+          <NuxtLink to="/about" class="nav-link">About</NuxtLink>
+          <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
+
+          <!-- CTA -->
+          <NuxtLink
+            to="/contact"
+            class="bg-black text-white px-6 py-2.5 rounded-xl
+                   hover:bg-gray-800 transition font-semibold"
+            :class="{ '!text-white': $route.path === '/contact' }"
+          >
+            Consultation
+          </NuxtLink>
+</nav>
+
       </div>
     </header>
 
@@ -219,4 +309,18 @@
 .footer-link.router-link-active {
   @apply text-white font-semibold;
 }
+
+/* MOBILE MENU BAR */
+.mobile-pill {
+  @apply px-4 py-2 rounded-full
+    bg-white/70 border border-black/5
+    text-gray-700
+    hover:bg-black hover:text-white
+    transition;
+}
+
+.mobile-pill.router-link-active {
+  @apply bg-black text-white font-semibold;
+}
+
 </style>
