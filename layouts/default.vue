@@ -125,12 +125,7 @@ watch(mobileOpen, (val) => {
             Consultation
           </NuxtLink>
         </nav>
-
-        <div
-  v-if="mobileOpen"
-  class="fixed inset-0 bg-black/20 z-30 md:hidden"
-  @click="mobileOpen = false"
-/>
+        
 <!-- HAMBURGER BUTTON (MOBILE ONLY) -->
 <button
   class="md:hidden flex flex-col justify-center gap-1
@@ -148,11 +143,12 @@ watch(mobileOpen, (val) => {
 <transition name="slide">
   <div
     v-if="mobileOpen"
-    class="md:hidden fixed top-[80px] left-0 right-0 bottom-0
-           z-40 bg-[#F6F3EE] shadow-xl overflow-y-auto"
+    class="md:hidden fixed inset-0 z-[999]
+           bg-[#F6F3EE] overflow-y-auto"
   >
-    <nav class="pt-24 px-6 space-y-4 text-sm font-medium">
-
+    <!-- jarak dari header -->
+    <nav class="pt-28 px-6 space-y-4 text-sm font-medium">
+      
       <NuxtLink to="/" class="mobile-link" @click="mobileOpen = false">
         Home
       </NuxtLink>
@@ -175,9 +171,7 @@ watch(mobileOpen, (val) => {
         <NuxtLink to="/service-details/maintenance-support" class="mobile-sub">Maintenance & Support</NuxtLink>
       </div>
 
-      <NuxtLink to="/pricing" class="mobile-link">
-        Pricing
-      </NuxtLink>
+      <NuxtLink to="/pricing" class="mobile-link">Pricing</NuxtLink>
 
       <!-- PORTFOLIO -->
       <button
@@ -198,18 +192,12 @@ watch(mobileOpen, (val) => {
         <NuxtLink to="/project-details/UMKM" class="mobile-sub">UMKM App</NuxtLink>
       </div>
 
-      <NuxtLink to="/about" class="mobile-link">
-        About
-      </NuxtLink>
+      <NuxtLink to="/about" class="mobile-link">About</NuxtLink>
+      <NuxtLink to="/contact" class="mobile-link">Contact</NuxtLink>
 
-      <NuxtLink to="/contact" class="mobile-link">
-        Contact
-      </NuxtLink>
-
-      <!-- CTA -->
       <NuxtLink
         to="/contact"
-        class="block mt-4 text-center bg-black text-white py-3 rounded-xl"
+        class="block mt-6 text-center bg-black text-white py-3 rounded-xl"
       >
         Consultation
       </NuxtLink>
