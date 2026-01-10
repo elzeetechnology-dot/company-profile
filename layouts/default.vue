@@ -125,6 +125,12 @@ watch(mobileOpen, (val) => {
             Consultation
           </NuxtLink>
         </nav>
+
+        <div
+  v-if="mobileOpen"
+  class="fixed inset-0 bg-black/20 z-30 md:hidden"
+  @click="mobileOpen = false"
+/>
 <!-- HAMBURGER BUTTON (MOBILE ONLY) -->
 <button
   class="md:hidden flex flex-col justify-center gap-1
@@ -136,6 +142,7 @@ watch(mobileOpen, (val) => {
   <span class="w-6 h-0.5 bg-black"></span>
   <span class="w-6 h-0.5 bg-black"></span>
 </button>
+
 
         <!-- MOBILE MENU PANEL -->
 <transition name="slide">
