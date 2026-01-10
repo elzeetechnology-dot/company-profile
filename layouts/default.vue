@@ -137,12 +137,6 @@ watch(mobileOpen, (val) => {
   <span class="w-6 h-0.5 bg-black"></span>
 </button>
 
-<div
-  v-if="mobileOpen"
-  class="fixed inset-0 bg-black/20 z-30 md:hidden"
-  @click="mobileOpen = false"
-/>
-
         <!-- MOBILE MENU PANEL -->
 <transition name="slide">
   <div
