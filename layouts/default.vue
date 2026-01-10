@@ -134,10 +134,11 @@ const mobilePortfolio = ref(false)
         <!-- MOBILE MENU PANEL -->
 <transition name="slide">
   <div
-    v-if="mobileOpen"
-    class="md:hidden bg-[#F6F3EE] border-t border-black/5"
-  >
-    <nav class="px-6 py-6 space-y-4 text-sm font-medium">
+  v-if="mobileOpen"
+  class="md:hidden fixed inset-0 z-40
+         bg-[#F6F3EE]"
+>
+    <nav class="pt-24 px-6 space-y-4 text-sm font-medium">
 
       <NuxtLink to="/" class="mobile-link" @click="mobileOpen = false">
         Home
