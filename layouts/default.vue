@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { watch } from 'vue'
 
 const mobileOpen = ref(false)
 const mobileServices = ref(false)
 const mobilePortfolio = ref(false)
+
+watch(mobileOpen, (val) => {
+  document.body.style.overflow = val ? 'hidden' : ''
+})
+
 </script>
 
 
@@ -131,13 +137,19 @@ const mobilePortfolio = ref(false)
   <span class="w-6 h-0.5 bg-black"></span>
 </button>
 
+<div
+  v-if="mobileOpen"
+  class="fixed inset-0 bg-black/20 z-30 md:hidden"
+  @click="mobileOpen = false"
+/>
+
         <!-- MOBILE MENU PANEL -->
 <transition name="slide">
   <div
-  v-if="mobileOpen"
-  class="md:hidden fixed inset-0 z-40
-         bg-[#F6F3EE]"
->
+    v-if="mobileOpen"
+    class="md:hidden fixed top-[80px] left-0 right-0 bottom-0
+           z-40 bg-[#F6F3EE] shadow-xl overflow-y-auto"
+  >
     <nav class="pt-24 px-6 space-y-4 text-sm font-medium">
 
       <NuxtLink to="/" class="mobile-link" @click="mobileOpen = false">
