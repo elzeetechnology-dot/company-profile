@@ -8,6 +8,13 @@ const mobilePortfolio = ref(false)
 watch(mobileOpen, (val) => {
   document.body.style.overflow = val ? 'hidden' : ''
 })
+
+const closeMobileMenu = () => {
+  mobileOpen.value = false
+  mobileServices.value = false
+  mobilePortfolio.value = false
+}
+
 </script>
 
 <template>
@@ -35,7 +42,14 @@ watch(mobileOpen, (val) => {
 
         <!-- DESKTOP MENU -->
         <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-          <NuxtLink to="/" class="nav-link">Home</NuxtLink>
+          <NuxtLink
+  to="/"
+  class="mobile-link"
+  @click="closeMobileMenu"
+>
+  Home
+</NuxtLink>
+
 
           <!-- SERVICES -->
           <div class="relative group">
@@ -52,26 +66,96 @@ watch(mobileOpen, (val) => {
             </div>
           </div>
 
-          <NuxtLink to="/pricing" class="nav-link">Pricing</NuxtLink>
+          <NuxtLink
+  to="/pricing"
+  class="mobile-link"
+  @click="closeMobileMenu"
+>
+  Pricing
+</NuxtLink>
+
 
           <!-- PORTFOLIO -->
-          <div class="relative group">
-            <button class="nav-link flex items-center gap-1">
-              Portfolio <span class="text-xs">▾</span>
-            </button>
-            <div class="dropdown-panel">
-              <NuxtLink to="/portfolio" class="dropdown-link">Portfolio</NuxtLink>
-              <NuxtLink to="/project-details/Admin" class="dropdown-link">Admin App</NuxtLink>
-              <NuxtLink to="/project-details/Akademik" class="dropdown-link">Academy App</NuxtLink>
-              <NuxtLink to="/project-details/Book-app" class="dropdown-link">Book App</NuxtLink>
-              <NuxtLink to="/project-details/Company-profile" class="dropdown-link">Web App</NuxtLink>
-              <NuxtLink to="/project-details/SM-Spbu" class="dropdown-link">SPBU App</NuxtLink>
-              <NuxtLink to="/project-details/UMKM" class="dropdown-link">UMKM App</NuxtLink>
-            </div>
-          </div>
+<div class="relative group">
+  <button
+    class="nav-link flex items-center gap-1"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    Portfolio
+    <span
+      class="text-xs transition-transform duration-300
+             group-hover:rotate-180"
+    >
+      ▾
+    </span>
+  </button>
 
-          <NuxtLink to="/about" class="nav-link">About</NuxtLink>
-          <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
+  <div
+    class="absolute left-0 mt-4 w-72 rounded-2xl
+           bg-white shadow-2xl border border-black/5
+           opacity-0 invisible
+           group-hover:opacity-100 group-hover:visible
+           translate-y-3 group-hover:translate-y-0
+           transition-all duration-300 ease-out"
+  >
+    <ul class="py-3 text-sm">
+      <li>
+        <NuxtLink to="/portfolio" class="dropdown-link">
+          Portfolio
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/project-details/Admin" class="dropdown-link">
+          Admin App
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/project-details/Akademik" class="dropdown-link">
+          Academy App
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/project-details/Book-app" class="dropdown-link">
+          Book App
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/project-details/Company-profile" class="dropdown-link">
+          Web App
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/project-details/SM-Spbu" class="dropdown-link">
+          SPBU App
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/project-details/UMKM" class="dropdown-link">
+          UMKM App
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+          <NuxtLink
+  to="/about"
+  class="mobile-link"
+  @click="closeMobileMenu"
+>
+  About
+</NuxtLink>
+
+          <NuxtLink
+  to="/contact"
+  class="mobile-link"
+  @click="closeMobileMenu"
+>
+  Contact
+</NuxtLink>
+
 
           <NuxtLink
             to="/contact"
@@ -102,44 +186,77 @@ watch(mobileOpen, (val) => {
             <NuxtLink to="/" class="mobile-link">Home</NuxtLink>
 
             <!-- SERVICES -->
-            <button
+<button
   class="mobile-link"
   @click="mobileServices = !mobileServices"
 >
   <span>Services</span>
-  <span class="text-lg">
+  <span class="text-lg font-semibold">
     {{ mobileServices ? '−' : '+' }}
   </span>
 </button>
 
 <div v-if="mobileServices" class="pl-4 space-y-1">
-  <NuxtLink to="/services" class="mobile-sub">Services</NuxtLink>
-  <NuxtLink to="/service-details/company-profile" class="mobile-sub">Company Profile</NuxtLink>
-  <NuxtLink to="/service-details/web-application" class="mobile-sub">Web Application</NuxtLink>
-  <NuxtLink to="/service-details/mobile-application" class="mobile-sub">Mobile Application</NuxtLink>
-  <NuxtLink to="/service-details/uiux-design" class="mobile-sub">UI / UX Design</NuxtLink>
-  <NuxtLink to="/service-details/maintenance-support" class="mobile-sub">Maintenance & Support</NuxtLink>
+  <NuxtLink to="/services" class="mobile-sub" @click="mobileOpen = false">
+    Services
+  </NuxtLink>
+  <NuxtLink to="/service-details/company-profile" class="mobile-sub" @click="mobileOpen = false">
+    Company Profile
+  </NuxtLink>
+  <NuxtLink to="/service-details/web-application" class="mobile-sub" @click="mobileOpen = false">
+    Web Application
+  </NuxtLink>
+  <NuxtLink to="/service-details/mobile-application" class="mobile-sub" @click="mobileOpen = false">
+    Mobile Application
+  </NuxtLink>
+  <NuxtLink to="/service-details/uiux-design" class="mobile-sub" @click="mobileOpen = false">
+    UI / UX Design
+  </NuxtLink>
+  <NuxtLink to="/service-details/maintenance-support" class="mobile-sub" @click="mobileOpen = false">
+    Maintenance & Support
+  </NuxtLink>
 </div>
+
 
 
             <NuxtLink to="/pricing" class="mobile-link">Pricing</NuxtLink>
 
             <!-- PORTFOLIO -->
-            <button
-              class="mobile-link w-full flex justify-between"
-              @click="mobilePortfolio = !mobilePortfolio"
-            >
-              Portfolio <span>{{ mobilePortfolio ? '−' : '+' }}</span>
-            </button>
-            <div v-if="mobilePortfolio" class="pl-4 space-y-2">
-              <NuxtLink to="/portfolio" class="mobile-sub">Portfolio</NuxtLink>
-              <NuxtLink to="/project-details/Admin" class="mobile-sub">Admin App</NuxtLink>
-              <NuxtLink to="/project-details/Akademik" class="mobile-sub">Academy App</NuxtLink>
-              <NuxtLink to="/project-details/Book-app" class="mobile-sub">Book App</NuxtLink>
-              <NuxtLink to="/project-details/Company-profile" class="mobile-sub">Web App</NuxtLink>
-              <NuxtLink to="/project-details/SM-Spbu" class="mobile-sub">SPBU App</NuxtLink>
-              <NuxtLink to="/project-details/UMKM" class="mobile-sub">UMKM App</NuxtLink>
-            </div>
+<button
+  class="mobile-link"
+  @click="mobilePortfolio = !mobilePortfolio"
+>
+  <span>Portfolio</span>
+  <span class="text-lg font-semibold">
+    {{ mobilePortfolio ? '−' : '+' }}
+  </span>
+</button>
+
+<div v-if="mobilePortfolio" class="pl-4 space-y-1">
+  <NuxtLink to="/portfolio" class="mobile-sub" @click="mobileOpen = false">
+    Portfolio
+  </NuxtLink>
+  <NuxtLink to="/project-details/Admin" class="mobile-sub" @click="mobileOpen = false">
+    Admin App
+  </NuxtLink>
+  <NuxtLink to="/project-details/Akademik" class="mobile-sub" @click="mobileOpen = false">
+    Academy App
+  </NuxtLink>
+  <NuxtLink to="/project-details/Book-app" class="mobile-sub" @click="mobileOpen = false">
+    Book App
+  </NuxtLink>
+  <NuxtLink to="/project-details/Company-profile" class="mobile-sub" @click="mobileOpen = false">
+    Web App
+  </NuxtLink>
+  <NuxtLink to="/project-details/SM-Spbu" class="mobile-sub" @click="mobileOpen = false">
+    SPBU App
+  </NuxtLink>
+  <NuxtLink to="/project-details/UMKM" class="mobile-sub" @click="mobileOpen = false">
+    UMKM App
+  </NuxtLink>
+</div>
+
+
 
             <NuxtLink to="/about" class="mobile-link">About</NuxtLink>
             <NuxtLink to="/contact" class="mobile-link">Contact</NuxtLink>
