@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const mobileOpen = ref(false)
+const mobileServices = ref(false)
+const mobilePortfolio = ref(false)
+</script>
+
+
 <template>
   <div class="min-h-screen flex flex-col bg-[#F6F3EE] text-gray-800">
     <!-- NAVBAR -->
@@ -111,25 +120,77 @@
           </NuxtLink>
         </nav>
 
-        <!-- MOBILE MENU BAR (KHUSUS MOBILE, BARIS BARU) -->
-<nav
-  class="md:hidden px-4 pb-4
-         flex flex-wrap gap-3
-         text-xs font-medium justify-center"
->
-  <NuxtLink to="/" class="mobile-pill">Home</NuxtLink>
+        <!-- MOBILE MENU PANEL -->
+<transition name="slide">
+  <div
+    v-if="mobileOpen"
+    class="md:hidden bg-[#F6F3EE] border-t border-black/5"
+  >
+    <nav class="px-6 py-6 space-y-4 text-sm font-medium">
 
-  <NuxtLink to="/services" class="mobile-pill">Services</NuxtLink>
+      <NuxtLink to="/" class="mobile-link" @click="mobileOpen = false">
+        Home
+      </NuxtLink>
 
-  <NuxtLink to="/pricing" class="mobile-pill">Pricing</NuxtLink>
+      <!-- SERVICES -->
+      <button
+        class="mobile-link w-full text-left flex justify-between"
+        @click="mobileServices = !mobileServices"
+      >
+        Services
+        <span>{{ mobileServices ? '−' : '+' }}</span>
+      </button>
 
-  <NuxtLink to="/portfolio" class="mobile-pill">Portfolio</NuxtLink>
+      <div v-if="mobileServices" class="ml-4 space-y-2">
+        <NuxtLink to="/services" class="mobile-sub">Services</NuxtLink>
+        <NuxtLink to="/service-details/company-profile" class="mobile-sub">Company Profile</NuxtLink>
+        <NuxtLink to="/service-details/web-application" class="mobile-sub">Web Application</NuxtLink>
+        <NuxtLink to="/service-details/mobile-application" class="mobile-sub">Mobile Application</NuxtLink>
+        <NuxtLink to="/service-details/uiux-design" class="mobile-sub">UI / UX Design</NuxtLink>
+        <NuxtLink to="/service-details/maintenance-support" class="mobile-sub">Maintenance & Support</NuxtLink>
+      </div>
 
-  <NuxtLink to="/about" class="mobile-pill">About</NuxtLink>
+      <NuxtLink to="/pricing" class="mobile-link">
+        Pricing
+      </NuxtLink>
 
-  <NuxtLink to="/contact" class="mobile-pill">Contact</NuxtLink>
-</nav>
+      <!-- PORTFOLIO -->
+      <button
+        class="mobile-link w-full text-left flex justify-between"
+        @click="mobilePortfolio = !mobilePortfolio"
+      >
+        Portfolio
+        <span>{{ mobilePortfolio ? '−' : '+' }}</span>
+      </button>
 
+      <div v-if="mobilePortfolio" class="ml-4 space-y-2">
+        <NuxtLink to="/portfolio" class="mobile-sub">Portfolio</NuxtLink>
+        <NuxtLink to="/project-details/Admin" class="mobile-sub">Admin App</NuxtLink>
+        <NuxtLink to="/project-details/Akademik" class="mobile-sub">Academy App</NuxtLink>
+        <NuxtLink to="/project-details/Book-app" class="mobile-sub">Book App</NuxtLink>
+        <NuxtLink to="/project-details/Company-profile" class="mobile-sub">Web App</NuxtLink>
+        <NuxtLink to="/project-details/SM-Spbu" class="mobile-sub">SPBU App</NuxtLink>
+        <NuxtLink to="/project-details/UMKM" class="mobile-sub">UMKM App</NuxtLink>
+      </div>
+
+      <NuxtLink to="/about" class="mobile-link">
+        About
+      </NuxtLink>
+
+      <NuxtLink to="/contact" class="mobile-link">
+        Contact
+      </NuxtLink>
+
+      <!-- CTA -->
+      <NuxtLink
+        to="/contact"
+        class="block mt-4 text-center bg-black text-white py-3 rounded-xl"
+      >
+        Consultation
+      </NuxtLink>
+    </nav>
+  </div>
+</transition>
 
       </div>
     </header>
@@ -219,7 +280,7 @@
   </div>
 </template>
 
-<style scoped>
+<<style scoped>
 .nav-link {
   @apply text-gray-700 hover:text-black transition;
 }
@@ -241,17 +302,25 @@
   @apply text-white font-semibold;
 }
 
-/* MOBILE MENU BAR */
-.mobile-pill {
-  @apply px-4 py-2 rounded-full
-    bg-white/70 border border-black/5
-    text-gray-700
-    hover:bg-black hover:text-white
-    transition;
+/* MOBILE */
+.mobile-link {
+  @apply block py-2 text-gray-800 font-medium;
 }
 
-.mobile-pill.router-link-active {
-  @apply bg-black text-white font-semibold;
+.mobile-sub {
+  @apply block py-1 text-gray-600 text-sm;
 }
 
+/* ANIMATION */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.25s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
 </style>
+
