@@ -119,6 +119,16 @@ const mobilePortfolio = ref(false)
             Consultation
           </NuxtLink>
         </nav>
+<!-- HAMBURGER BUTTON (MOBILE ONLY) -->
+<button
+  class="md:hidden flex flex-col justify-center gap-1"
+  @click="mobileOpen = !mobileOpen"
+  aria-label="Open menu"
+>
+  <span class="w-6 h-0.5 bg-black"></span>
+  <span class="w-6 h-0.5 bg-black"></span>
+  <span class="w-6 h-0.5 bg-black"></span>
+</button>
 
         <!-- MOBILE MENU PANEL -->
 <transition name="slide">
@@ -280,7 +290,7 @@ const mobilePortfolio = ref(false)
   </div>
 </template>
 
-<<style scoped>
+<style scoped>
 .nav-link {
   @apply text-gray-700 hover:text-black transition;
 }
