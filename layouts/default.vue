@@ -103,19 +103,24 @@ watch(mobileOpen, (val) => {
 
             <!-- SERVICES -->
             <button
-              class="mobile-link w-full flex justify-between"
-              @click="mobileServices = !mobileServices"
-            >
-              Services <span>{{ mobileServices ? '−' : '+' }}</span>
-            </button>
-            <div v-if="mobileServices" class="pl-4 space-y-2">
-              <NuxtLink to="/services" class="mobile-sub">Services</NuxtLink>
-              <NuxtLink to="/service-details/company-profile" class="mobile-sub">Company Profile</NuxtLink>
-              <NuxtLink to="/service-details/web-application" class="mobile-sub">Web Application</NuxtLink>
-              <NuxtLink to="/service-details/mobile-application" class="mobile-sub">Mobile Application</NuxtLink>
-              <NuxtLink to="/service-details/uiux-design" class="mobile-sub">UI / UX Design</NuxtLink>
-              <NuxtLink to="/service-details/maintenance-support" class="mobile-sub">Maintenance & Support</NuxtLink>
-            </div>
+  class="mobile-link"
+  @click="mobileServices = !mobileServices"
+>
+  <span>Services</span>
+  <span class="text-lg">
+    {{ mobileServices ? '−' : '+' }}
+  </span>
+</button>
+
+<div v-if="mobileServices" class="pl-4 space-y-1">
+  <NuxtLink to="/services" class="mobile-sub">Services</NuxtLink>
+  <NuxtLink to="/service-details/company-profile" class="mobile-sub">Company Profile</NuxtLink>
+  <NuxtLink to="/service-details/web-application" class="mobile-sub">Web Application</NuxtLink>
+  <NuxtLink to="/service-details/mobile-application" class="mobile-sub">Mobile Application</NuxtLink>
+  <NuxtLink to="/service-details/uiux-design" class="mobile-sub">UI / UX Design</NuxtLink>
+  <NuxtLink to="/service-details/maintenance-support" class="mobile-sub">Maintenance & Support</NuxtLink>
+</div>
+
 
             <NuxtLink to="/pricing" class="mobile-link">Pricing</NuxtLink>
 
