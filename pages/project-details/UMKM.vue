@@ -59,22 +59,35 @@
       </ul>
 
       <div class="flex flex-col gap-4">
-        <NuxtLink
-          to="/portfolio"
-          class="inline-block text-center px-6 py-3 rounded-xl
-                 border text-gray-700 hover:bg-gray-100 transition"
-        >
-          ← Kembali ke Portfolio
-        </NuxtLink>
+  <!-- 🔥 DEMO BUTTON -->
+  <a
+    href="https://umkm-app-gold.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-block text-center px-6 py-3 rounded-xl
+           bg-green-600 text-white hover:bg-green-700
+           transition font-semibold"
+  >
+    🚀 Coba Demo Aplikasi
+  </a>
 
-        <NuxtLink
-          to="/contact"
-          class="inline-block text-center px-6 py-3 rounded-xl
-                 bg-blue-600 text-white hover:bg-blue-700 transition font-semibold"
-        >
-          Konsultasi Aplikasi UMKM
-        </NuxtLink>
-      </div>
+  <NuxtLink
+    to="/portfolio"
+    class="inline-block text-center px-6 py-3 rounded-xl
+           border text-gray-700 hover:bg-gray-100 transition"
+  >
+    ← Kembali ke Portfolio
+  </NuxtLink>
+
+  <NuxtLink
+    to="/contact"
+    class="inline-block text-center px-6 py-3 rounded-xl
+           bg-blue-600 text-white hover:bg-blue-700 transition font-semibold"
+  >
+    Konsultasi Aplikasi UMKM
+  </NuxtLink>
+</div>
+
     </div>
   </section>
 
