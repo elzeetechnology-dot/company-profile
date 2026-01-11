@@ -243,7 +243,7 @@ const closeMobileMenu = () => {
       </p>
       <p class="text-xs text-gray-500">
         Membantu UMKM, sekolah, perusahaan, dan startup bertransformasi
-        secara digital sejak 2026.
+        secara digital sejak 2025.
       </p>
     </div>
 
@@ -298,7 +298,7 @@ const closeMobileMenu = () => {
              items-center justify-between
              text-xs text-gray-500 gap-2"
     >
-      <span>© 2026 ELZEE Technology. All rights reserved.</span>
+      <span>© 2025 ELZEE Technology. All rights reserved.</span>
       <span>Crafted with ❤️ using modern web technologies</span>
     </div>
   </div>
