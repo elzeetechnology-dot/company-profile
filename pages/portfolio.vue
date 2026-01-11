@@ -31,26 +31,25 @@
                hover:shadow-2xl transition duration-300"
       >
         <!-- IMAGE -->
-        <div
-          class="relative h-52 bg-gradient-to-br
-                 from-gray-200 to-gray-300
-                 flex items-center justify-center"
-        >
-          <span class="text-gray-500 text-sm">
-            Project Preview
-          </span>
+        <div class="relative h-52 overflow-hidden">
+  <img
+    :src="item.image"
+    :alt="item.title"
+    class="w-full h-full object-cover
+           group-hover:scale-105 transition duration-500"
+  />
 
-          <!-- Overlay -->
-          <div
-            class="absolute inset-0 bg-black/60 opacity-0
-                   group-hover:opacity-100 transition
-                   flex items-center justify-center"
-          >
-            <span class="text-white font-semibold tracking-wide">
-              View Project →
-            </span>
-          </div>
-        </div>
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0 bg-black/60 opacity-0
+           group-hover:opacity-100 transition
+           flex items-center justify-center"
+  >
+    <span class="text-white font-semibold tracking-wide">
+      View Project →
+    </span>
+  </div>
+</div>
 
         <!-- CONTENT -->
         <div class="p-6">
@@ -109,6 +108,8 @@ const portfolios = [
       'Aplikasi web untuk monitoring stok, penjualan, dan laporan harian SPBU.',
     tech: ['Vue', 'Laravel', 'MySQL'],
     link: '/project-details/SM-Spbu',
+    image: '/images/portfolio/spbu-admin.png',
+    demo: 'https://adminspbu.online/',
   },
   {
     title: 'Website Company Profile',
@@ -116,6 +117,8 @@ const portfolios = [
       'Website profesional untuk meningkatkan branding dan kepercayaan perusahaan.',
     tech: ['Nuxt', 'Tailwind CSS'],
     link: '/project-details/Company-profile',
+    image: '/images/portfolio/company-profile.png',
+    demo: 'https://elzeetechnology.vercel.app/',
   },
   {
     title: 'Aplikasi Kasir UMKM',
@@ -123,6 +126,8 @@ const portfolios = [
       'Aplikasi kasir berbasis web untuk membantu pencatatan transaksi UMKM.',
     tech: ['Vue', 'Firebase'],
     link: '/project-details/UMKM',
+    image: '/images/portfolio/umkm.png',
+    demo: 'https://umkm-app-gold.vercel.app/',
   },
   {
     title: 'Sistem Akademik Sekolah',
@@ -130,6 +135,7 @@ const portfolios = [
       'Pengelolaan data siswa, guru, nilai, dan laporan akademik.',
     tech: ['Laravel', 'Bootstrap'],
     link: '/project-details/Akademik',
+    image: '/images/portfolio/comingsoon.png',
   },
   {
     title: 'Dashboard Admin',
@@ -137,6 +143,7 @@ const portfolios = [
       'Dashboard admin untuk manajemen data dan monitoring sistem.',
     tech: ['Nuxt', 'API', 'Tailwind'],
     link: '/project-details/Admin',
+    image: '/images/portfolio/comingsoon.png',
   },
   {
     title: 'Aplikasi Booking Online',
@@ -144,6 +151,8 @@ const portfolios = [
       'Sistem booking layanan online dengan notifikasi dan manajemen jadwal.',
     tech: ['Vue', 'Node.js'],
     link: '/project-details/Book-app',
+    image: '/images/portfolio/comingsoon.png',
   },
 ]
+
 </script>

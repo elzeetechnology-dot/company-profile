@@ -58,22 +58,35 @@
       </ul>
 
       <div class="flex flex-col gap-4">
-        <NuxtLink
-          to="/portfolio"
-          class="inline-block text-center px-6 py-3 rounded-xl
-                 border text-gray-700 hover:bg-gray-100 transition"
-        >
-          ← Kembali ke Portfolio
-        </NuxtLink>
+  <!-- 🔥 DEMO BUTTON -->
+  <a
+    href="https://adminspbu.online/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-block text-center px-6 py-3 rounded-xl
+           bg-emerald-600 text-white hover:bg-emerald-700
+           transition font-semibold"
+  >
+    ⛽ Lihat Demo Sistem SPBU
+  </a>
 
-        <NuxtLink
-          to="/contact"
-          class="inline-block text-center px-6 py-3 rounded-xl
-                 bg-black text-white hover:bg-gray-800 transition font-semibold"
-        >
-          Konsultasi Sistem SPBU
-        </NuxtLink>
-      </div>
+  <NuxtLink
+    to="/portfolio"
+    class="inline-block text-center px-6 py-3 rounded-xl
+           border text-gray-700 hover:bg-gray-100 transition"
+  >
+    ← Kembali ke Portfolio
+  </NuxtLink>
+
+  <NuxtLink
+    to="/contact"
+    class="inline-block text-center px-6 py-3 rounded-xl
+           bg-black text-white hover:bg-gray-800 transition font-semibold"
+  >
+    Konsultasi Sistem SPBU
+  </NuxtLink>
+</div>
+
     </div>
   </section>
 
