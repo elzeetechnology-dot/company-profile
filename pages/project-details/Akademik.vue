@@ -53,11 +53,23 @@
       </h3>
 
       <p class="text-gray-600 mb-6">
-        Halaman detail project ini sedang dalam tahap pengembangan.
-        Dokumentasi, screenshot, dan studi kasus akan segera ditambahkan.
+        Sistem Akademik ini sudah dapat dicoba melalui versi demo
+        untuk melihat alur dan fitur utama aplikasi.
       </p>
 
       <div class="flex flex-col gap-4">
+        <!-- DEMO BUTTON -->
+        <a
+          href="https://siakad-theta.vercel.app/"
+          target="_blank"
+          rel="noopener"
+          class="inline-block text-center px-6 py-3 rounded-xl
+                 bg-blue-600 text-white hover:bg-blue-700
+                 transition font-semibold"
+        >
+          🚀 Coba Demo Sistem Akademik
+        </a>
+
         <NuxtLink
           to="/portfolio"
           class="inline-block text-center px-6 py-3 rounded-xl
