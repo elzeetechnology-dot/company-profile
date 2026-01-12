@@ -135,7 +135,8 @@ const portfolios = [
       'Pengelolaan data siswa, guru, nilai, dan laporan akademik.',
     tech: ['Laravel', 'Bootstrap'],
     link: '/project-details/Akademik',
-    image: '/images/portfolio/comingsoon.png',
+    image: '/images/portfolio/sistem-akademik.png',
+    demo: 'https://siakad-theta.vercel.app/',
   },
   {
     title: 'Dashboard Admin',
